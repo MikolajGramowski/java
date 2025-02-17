@@ -6,8 +6,6 @@ public class Book {
     private int pages;
     private int readCount;
 
-    // test2
-    // test
     public Book(String name, String author, boolean isHardcover, double price, int pages) {
         this.name = name;
         this.author = author;

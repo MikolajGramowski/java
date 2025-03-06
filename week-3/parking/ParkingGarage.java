@@ -6,13 +6,13 @@ class ParkingGarage {
     private String name;
     private String address;
     private int capacity;
-    private List<Car> parkedCars;
+    private Set<Car> parkedCars;
 
     public ParkingGarage(String name, String address, int capacity) {
         this.name = name;
         this.address = address;
         this.capacity = capacity;
-        this.parkedCars = new ArrayList<>();
+        this.parkedCars = new HashSet<>();
     }
 
     public boolean isValidLicensePlate(String licensePlate) {
@@ -33,9 +33,13 @@ class ParkingGarage {
             System.out.println("Too many white cars in the garage!");
             return false;
         }
-        parkedCars.add(car);
-        System.out.println("Car entered: " + car.getLicensePlate());
-        return true;
+        if (parkedCars.add(car)) {
+            System.out.println("Car entered: " + car.getLicensePlate());
+            return true;
+        } else {
+            System.out.println("Car is already in the garage!");
+            return false;
+        }
     }
 
     public boolean exitGarage(String licensePlate) {

@@ -15,11 +15,23 @@ class Car {
         return licensePlate;
     }
 
+    public String getColor() {
+        return color;
+    }
+
     public String getBrand() {
         return brand;
     }
 
-    public String getColor() {
-        return color;
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
+
+    public void setLicensePlate(String licensePlate) {
+        this.licensePlate = licensePlate;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
     }
 }
